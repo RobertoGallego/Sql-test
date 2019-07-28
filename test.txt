@@ -1,0 +1,6 @@
+SELECT ord_no AS "Orders", cust_name AS "Customer", grade AS "Grade", commission AS "Commission %", 
+'$' || purch_amt * commission AS "Earned commission"  
+FROM customer, salesman, orders
+WHERE orders.customer_id=customer.customer_id
+AND orders.salesman_id=salesman.salesman_id
+AND customer.grade >= 200;
